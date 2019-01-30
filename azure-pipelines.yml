@@ -13,5 +13,5 @@ variables:
   imageName: 'lissajou-curves-react:$(build.buildId)'
 
 steps:
-- script: docker build -f ./lissajou-curves-react/Dockerfile -t $(imageName) .
+- script: docker build -f ./lissajou-curves-react/Dockerfile -t $(imageName) ./lissajou-curves-react
   displayName: 'docker build'
