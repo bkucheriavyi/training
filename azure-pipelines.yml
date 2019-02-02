@@ -10,8 +10,9 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
+  -group: default
   registryLogin: 'bkucheriavyi'
-  registryPassword: 'G3drs+v6gG7rcinjKZRcnrTtwfWnfZd1'
+  registryPassword: $(dockerPassword)
   registryUrl: 'bkucheriavyi.azurecr.io'
   
   imageName: '$(registryUrl)/lissajou-curves-react:$(build.buildId)'
