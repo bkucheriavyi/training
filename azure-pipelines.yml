@@ -11,11 +11,14 @@ pool:
 
 variables:
   -group: default
-  registryLogin: 'bkucheriavyi'
-  registryPassword: $(dockerPassword)
-  registryUrl: 'bkucheriavyi.azurecr.io'
-  
-  imageName: '$(registryUrl)/lissajou-curves-react:$(build.buildId)'
+  -name: registryLogin
+   value:'bkucheriavyi'
+  -name: registryPassword
+   value: '$(dockerPassword)'
+  -name: registryUrl
+   value: 'bkucheriavyi.azurecr.io'
+  -name: imageName
+  vakue: '$(registryUrl)/lissajou-curves-react:$(build.buildId)'
 
 steps:
 - script: docker build -f ./lissajou-curves-react/Dockerfile -t $(imageName) ./lissajou-curves-react
