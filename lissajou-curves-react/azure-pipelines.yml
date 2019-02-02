@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  -group: default
+  #-group: default
   registryLogin: 'bkucheriavyi'
   registryPassword: $(dockerPassword)
   registryUrl: 'bkucheriavyi.azurecr.io'
@@ -18,8 +18,8 @@ variables:
   imageName: '$(registryUrl)/lissajou-curves-react:$(build.buildId)'
 
 steps:
-- script: docker build -f ./Dockerfile -t $(imageName) .
-  displayName: 'Build image'
+#- script: docker build -f ./Dockerfile -t $(imageName) .
+#  displayName: 'Build image'
 - script: |
       docker login -u $(registryLogin) -p $(registryPassword) $(registryUrl)
       docker push $(imageName)
