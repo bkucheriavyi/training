@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  -group: default
+  -group: default(1)
   registryLogin: 'bkucheriavyi'
   registryPassword: $(dockerPassword)
   registryUrl: 'bkucheriavyi.azurecr.io'
