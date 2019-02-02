@@ -17,7 +17,7 @@ variables:
   imageName: '$(registryUrl)/lissajou-curves-react:$(build.buildId)'
 
 steps:
-- script: docker build -f ./Dockerfile -t $(imageName) .
+- script: docker build -t $(imageName) 
   displayName: 'Build image'
 - script: |
       docker login -u $(registryLogin) -p $(registryPassword) $(registryUrl)
