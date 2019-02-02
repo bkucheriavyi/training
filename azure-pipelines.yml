@@ -15,7 +15,7 @@ variables:
    value:'bkucheriavyi'
   
   -name: registryPassword
-   value: '$(dockerPassword)'
+   value: 'dockerPassword'
   
   -name: registryUrl
    value: 'bkucheriavyi.azurecr.io'
