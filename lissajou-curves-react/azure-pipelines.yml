@@ -14,7 +14,7 @@ variables:
   registryPassword: $(dockerPassword)
   registryUrl: 'bkucheriavyi.azurecr.io'
   
-  imageName: '$(registryUrl)/lissajou-curves-react:$(build.buildId)'
+  imageName: '$(registryUrl)/lissajou-curves:$(build.buildId)'
 
 steps:
 - script: |
@@ -25,3 +25,8 @@ steps:
       docker login -u $(registryLogin) -p $(registryPassword) $(registryUrl)
       docker push $(imageName)
   displayName: 'Log in and push image into container registry'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    artifactName: 'test' 
+    #targetPath: 
